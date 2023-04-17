@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Temperature Converter</title>
+    <link href="css/styles.css" type="text/css"
+    rel="stylesheet">
+  </head>
+  <body>
+    <h1>Temperature Converter</h1>
+    <p>Enter a temperature in degrees centigrade:</p>
+    <input type="number" id="tempC">
+    <button onclick="convertTemp()">Convert</button>
+    <p id="result"></p>
+    
+    <script>
+      function convertTemp() {
+
+        // Get the temperature in degrees centigrade
+        var degC = document.getElementById("tempC").value;
+
+        
+        // Convert degrees centigrade to degrees Fahrenheit
+        var degF = 9 / 5 * degC + 32;
+
+        
+        // Display the result on the page
+        var result = document.getElementById("result");
+        result.innerHTML = degC + " degrees centigrade is " + degF + " degrees Fahrenheit.";
+      }
+    </script>
+    <footer>
+        <ul>
+            <li>Copyright &copy;
+                2023</li>
+            <li>All Rights Reserved</li>
+            <li><a href="#">Web Design by Edgar</a></li>
+            <li><a href="#">HTML Validation</a></li>
+            <li><a href="#">CSS Validation</a></li>
+            </ul>
+            
+            <script>
+                    document.getElementById("html-checker").setAttribute("href","https://validator.w3.org/nu/?doc=" + location.href);
+                    document.getElementById("css-checker").setAttribute("href","https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
+            </script>
+    
+    </footer>
+  </body>
+</html>

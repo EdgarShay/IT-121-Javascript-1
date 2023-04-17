@@ -1,0 +1,26 @@
+body {
+    background-color:lightblue;
+}
+
+
+
+footer {
+    height:60px;
+    line-height: 60px;
+    background: #ddd;
+    clear:both;
+    margin-top:60px;
+}
+
+
+footer ul {
+    display:flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+
+footer li {
+    justify-content: center;
+    margin:0 15px;
+}
