@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>Website Page, week-3-assignment 2</title>
+
+    <link href="css/styles.css" type="text/css" rel="stylesheet">
+
+</head>
+<body>
+    <!-- calculate date 12 months from now -->
+
+    <h1>The Date 12 Months From Now</h1>
+	<p id="output"></p>
+	<script>
+		// Create a new Date object
+		let today = new Date();
+
+
+		// Calculate the date 12 months from now
+		let futureDate = new Date(today.setMonth(today.getMonth() + 12));
+
+
+		// Create an array of month names
+		let months = ['January', 'February', 'March', 'April', 'May', 'June', 
+        'July', 'August', 'September', 'October', 'November', 'December'];
+
+		// Get the month name and year from the future date object
+		let monthName = months[futureDate.getMonth()];
+		let year = futureDate.getFullYear();
+
+		//  Display the future date in the output paragraph element
+		document.getElementById('output')
+        .innerHTML = 'The date 12 months from now is ' + monthName + ' ' + year + '.';
+	</script>
+
+          <!-- my footer -->
+ <footer>
+    <ul>
+        <li>Copyright &copy;
+            2023</li>
+        <li>All Rights Reserved</li>
+        <li><a href="#">Web Design by Edgar</a></li>
+        <li><a href="#">HTML Validation</a></li>
+        <li><a href="#">CSS Validation</a></li>
+        </ul>
+        
+        <script>
+                document.getElementById("html-checker").setAttribute("href","https://validator.w3.org/nu/?doc=" + location.href);
+                document.getElementById("css-checker").setAttribute("href","https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
+        </script>
+
+</footer>
+
+</body>
+</html>

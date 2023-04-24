@@ -1,0 +1,40 @@
+body {
+    background-image: url(../images/time1.jpg);
+    background-size: cover; 
+    /* background-position: center; */
+}
+
+
+h1 {
+    font-weight:bold;
+    
+}
+
+p {
+    font-size:20px;
+    color:mediumspringgreen;
+    padding-bottom:50px;
+}
+
+
+
+footer {
+    height:60px;
+    line-height: 60px;
+    background: #ddd;
+    clear:both;
+    margin-top:60px;
+}
+
+
+footer ul {
+    display:flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+
+footer li {
+    justify-content: center;
+    margin:0 15px;
+}
