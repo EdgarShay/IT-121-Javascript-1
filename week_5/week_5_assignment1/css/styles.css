@@ -1,0 +1,44 @@
+/* css code for my math multiplication table */
+
+body {
+    background-color:lightskyblue;
+    font-family: Arial, sans-serif;
+    text-align: center;
+	font-size: 24px;
+	margin-top: 50px;
+  }
+  
+
+  table {
+	border-collapse: collapse;
+	margin: 0 auto;
+}
+
+th, td {
+	border: 1px solid black;
+	padding: 10px;
+	text-align: center;
+}
+
+ 
+  footer {
+    height:60px;
+    line-height: 60px;
+    background: #ddd;
+    clear:both;
+    margin-top:60px;
+}
+
+
+footer ul {
+    display:flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+
+footer li {
+    justify-content: center;
+    margin:0 15px;
+}
+
