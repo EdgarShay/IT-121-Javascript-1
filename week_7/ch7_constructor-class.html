@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Classes</h1>
+<p>Creating two car objects from a car class:</p>
+
+<p id="demo"></p>
+
+<script>
+//The code defines a class named "Car" with a constructor method that takes in 
+//two parameters: "name" and "year". 
+//The constructor method initializes 
+//properties of the object using the "this" keyword.
+class Car { 
+  constructor(name, year) {
+    this.name = name;
+    this.year = year;
+  }
+}
+//Then, the code creates two instances of the "Car" class
+//named "myCar1" and "myCar2" using the "new" keyword 
+//and passing in arguments for the constructor.
+
+const myCar1 = new Car("Ford", 2014);
+const myCar2 = new Car("Audi", 2019);
+//Finally, the code sets the innerHTML of the element 
+//with the ID "demo" to a string that concatenates 
+//the names of both cars separated by a space.
+// This string is then displayed on the web page.
+
+document.getElementById("demo").innerHTML =
+myCar1.name + " " + myCar2.name;
+</script>
+
+</body>
+</html>
