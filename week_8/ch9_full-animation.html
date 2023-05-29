@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <style>
+
+    /* CSS styles defining the container and animated element */
+
+    body {
+        background-image: url('cover.jpg');
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+
+    #container {
+      width: 400px;
+      height: 400px;
+      position: relative;
+      background-color: yellow;
+    }
+    #animate {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      background-color: red;
+    }
+
+   
+    .button-container {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    .button-container button {
+      font-size: 18px;
+      /* background-color:lightskyblue; */
+      background-color: #f44336;  
+      color: #fff; /* White text color */
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .button-container button:hover {
+      /* background-color: #c62828;  */
+      background-color:lightskyblue; 
+    }
+
+
+    /* footer {
+    height:60px;
+    line-height: 40px;
+    background: #ddd;
+    clear:both;
+    margin-top:60px;
+}
+
+
+footer ul {
+    display:flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+
+footer li {
+    justify-content: center;
+    margin:0 15px;
+} */
+
+  </style>
+</head>
+<body>
+<!-- <h1> My DOM Full Animation Using JavaScript</h1> -->
+    <div class="button-container"> 
+<!-- Button that triggers the animation -->
+<button onclick="myMove()">Click Me</button>
+
+<!-- Container and animated element -->
+<div id="container">
+  <div id="animate"></div>
+
+</div>
+
+<script>
+  function myMove() {
+
+    // Variable to hold the interval ID
+    let id = null;
+    
+    // Get the animated element
+    const elem = document.getElementById("animate"); 
+
+    // Initial position of the animated element
+    let pos = 0; 
+
+    // Clear any previous animations
+    clearInterval(id); 
+
+    // Start the animation by calling frame() every 5 milliseconds
+    id = setInterval(frame, 5); 
+
+    function frame() {
+
+        // Check if the animation has reached the end position
+      if (pos == 350) { 
+
+        // Stop the animation
+        clearInterval(id); 
+      } else {
+        pos++; // Increment the position
+        
+        // Update the top CSS property of the element
+        elem.style.top = pos + 'px'; 
+
+        // Update the left CSS property of the element
+        elem.style.left = pos + 'px'; 
+      }
+    }
+  }
+</script>
+
+<!-- <footer>
+    <ul>
+        <li>Copyright &copy;
+            2023</li>
+        <li>All Rights Reserved</li>
+        <li><a href="#">Web Design by Edgar</a></li>
+        <li><a href="#">HTML Validation</a></li>
+        <li><a href="#">CSS Validation</a></li>
+        </ul>
+        
+        <script>
+                document.getElementById("html-checker").setAttribute("href","https://validator.w3.org/nu/?doc=" + location.href);
+                document.getElementById("css-checker").setAttribute("href","https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
+        </script>
+</footer> -->
+
+</body>
+</html>
