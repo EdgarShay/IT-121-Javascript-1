@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete JavaScript Course</title>
+
+<style>
+ body {
+            display: flex;
+            background-color:lightblue;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        textarea, button {
+            margin-bottom: 10px;
+        }
+
+        .container {
+            /* display: flex;  */
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }  
+
+h2 {
+    text-align: center;
+}
+
+
+p {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+footer {
+    height:60px;
+    line-height: 60px;
+    background: #ddd;
+    clear:both;
+    margin-top:60px;
+}
+
+
+footer ul {
+    display:flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+
+footer li {
+    justify-content: center;
+    margin:0 15px;
+}
+
+
+</style>
+
+</head>
+<body>
+
+    <div class="container"> 
+        
+        <h2><br>Week 9 Assignment </h2>
+        <p>Edgar week 9 IT Email Extractor</p>
+                     
+    <div>
+
+    <textarea name="txtarea" rows=2 cols=50></textarea>
+    <button id="extractBtn">Get Emails</button>
+    <textarea name="txtarea2" rows=2 cols=50></textarea>
+
+    <script>
+        // Select the first textarea element with the name attribute 
+        // set to 'txtarea' and store it in the variable 'firstArea'.
+        const firstArea = document.querySelector('textarea[name="txtarea"]');
+        
+        // Select the second textarea element with the name attribute 
+        // set to 'txtarea2' and store it in the variable 'secArea'.
+        const secArea = document.querySelector('textarea[name="txtarea2"]');
+        
+        // Find the button element with the id 'extractBtn'
+        // attach a click event listener to it, calling the 'lookUp' function when clicked.
+        document.getElementById('extractBtn').addEventListener('click', lookUp);
+
+        // Declare a function named 'lookUp'.
+        function lookUp() {
+
+        // Get the value of the 'firstArea' textarea and store it in the 'rawTxt' variable.
+        const rawTxt = firstArea.value;
+            
+        // Use a regular expression to match and extract email addresses 
+        // from the 'rawTxt' string, and store them in the 'eData' variable.
+            const eData = rawTxt.match(/\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b/g);
+            
+            // Create an empty array named 'holder' to store unique email addresses.
+            const holder = [];
+            
+            // Iterate through each element in the 'eData' array.
+            eData.forEach(email => {
+
+                // Check if the current email address is not already present 
+                // in the 'holder' array.
+                if (!holder.includes(email)) {
+                    // Add the current email address to the 'holder' array.
+                    holder.push(email);
+                }
+            });
+            
+            // Join the 'holder' array elements with a line break 
+            // set it as the value of the 'secArea' textarea.
+            secArea.value = holder.join('\n');
+        }
+    </script>
+
+</div><br>
+
+<footer>
+    <ul>
+        <li>Copyright &copy;
+            2023</li>
+        <li>All Rights Reserved</li>
+        <li><a href="#">Web Design by Edgar</a></li>
+        <li><a href="#">HTML Validation</a></li>
+        <li><a href="#">CSS Validation</a></li>
+        </ul>
+        
+        <script>
+                document.getElementById("html-checker").setAttribute("href","https://validator.w3.org/nu/?doc=" + location.href);
+                document.getElementById("css-checker").setAttribute("href","https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
+        </script>
+</footer>
+
+
+</div>
+<!-- wrapper -->
+
+</body>
+</html>
