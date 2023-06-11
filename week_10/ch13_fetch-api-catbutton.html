@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API-Creating UI</title>
+
+<style>
+body {
+            display: flex;
+            background-color:lightblue;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif; 
+        }
+
+
+.container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+    
+.fetch-button {
+    padding: 10px 20px;
+    background-color:green;
+    color: white;
+    border: none;
+    cursor: pointer;
+    }
+
+
+
+h2 {
+    text-align: center;
+}
+
+
+p {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+footer {
+    height:60px;
+    line-height: 60px;
+    background: #ddd;
+    clear:both;
+    margin-top:60px;
+}
+
+
+footer ul {
+    display:flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+
+footer li {
+    justify-content: center;
+    margin:0 15px;
+}
+
+
+</style>
+</head>
+<body>
+    
+   
+
+    <div class="container"> 
+    
+        
+    
+    <h2><br>Week 10 Assignment </h2>
+    <p> IT 121 JavaScript, HTML Web Page with a button</p>
+          
+    <!-- <button id="fetchButton" class="fetch-button">Fetch Cat Fact</button>    -->
+
+    <div>
+       
+    <button onclick="showCatFact()" class="fetch-button">Get a Cat fact</button>
+    <p id="catfact"></p>  
+
+    <script>
+        async function getCatFact() {
+           
+            const api_endpoint = "https://cat-fact.herokuapp.com/facts/random?amount=1"
+            const response = await fetch(api_endpoint);
+            const json_response = await response.json();
+         
+            console.log(json_response);
+            return json_response;
+        }
+
+        async function showCatFact() {
+            const catFactResponse = await getCatFact();
+            const paragraphTag = document.getElementById("catfact");
+            paragraphTag.innerText = catFactResponse.text;
+        }
+
+    </script>
+
+</div><br>
+
+<footer>
+    <ul>
+        <li>Copyright &copy;
+            2023</li>
+        <li>All Rights Reserved</li>
+        <li><a href="#">Web Design by Edgar</a></li>
+        <li><a href="#">HTML Validation</a></li>
+        <li><a href="#">CSS Validation</a></li>
+        </ul>
+        
+        <script>
+                document.getElementById("html-checker").setAttribute("href","https://validator.w3.org/nu/?doc=" + location.href);
+                document.getElementById("css-checker").setAttribute("href","https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
+        </script>
+</footer>
+
+</div>
+<!-- wrapper -->
+
+
+</body>
+</html>
